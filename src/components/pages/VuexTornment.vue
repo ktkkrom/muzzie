@@ -30,6 +30,7 @@ export default {
   },
   mounted() {
     this.$store.dispatch('loadSongs');
+    this.$store.commit('increment', this.keyWord);
   },
   computed: mapState([
     'songs'

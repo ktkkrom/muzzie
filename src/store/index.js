@@ -9,6 +9,14 @@ export default new Vuex.Store({
   state: {
     songs: []
   },
+  mutations: {
+    SET_SONGS(state, songs) {
+      state.songs = songs
+    },
+    increment(state, word) {
+      state.word = word
+    }
+  },
   actions: {
     loadSongs({
       commit
@@ -25,12 +33,4 @@ export default new Vuex.Store({
         })
     }
   },
-  mutations: {
-    SET_SONGS(state, songs) {
-      state.songs = songs
-    },
-    increment(state, n) {
-      state.n = n
-    }
-  }
 })

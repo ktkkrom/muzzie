@@ -29,7 +29,7 @@ export default {
     Song
   },
   mounted() {
-    this.$store.dispatch('loadSongs')
+    this.$store.dispatch('loadSongs');
   },
   computed: mapState([
     'songs'

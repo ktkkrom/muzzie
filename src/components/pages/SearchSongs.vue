@@ -35,13 +35,6 @@ export default {
     token: token,
   }),
   methods: {
-    searchSongs(word) {
-      axios.get(`https://api.genius.com/search?q=${word}&access_token=${this.token}`)
-        .then(response => {
-          this.songs = response.data.response.hits[1]
-          console.log(response.data.response.hits[1].header_image_url)
-        });
-    },
     goToSong(id) {
       this.$router.push({
         name: "DetailedSong",
@@ -50,6 +43,12 @@ export default {
         }
       })
     }
+  },
+  computed: {
+    searchSongs() {
+      this.$store.commit('loadFileDetails', word)
+    },
+
   }
 }
 </script>

@@ -6,8 +6,9 @@
       <v-card flat class="text-xs-center ma-3" height="98%">
         <h1> {{ item.result.title}} </h1>
         <h3> {{ item.result.full_title}} </h3>
-        <span>{{ item.result.path}}</span>
+        <h4>{{ item.result.path}}</h4>
         <img width="200" :src="item.result.song_art_image_url" alt="">
+        <v-btn @click="goToSong(song.id)">open</v-btn>
       </v-card>
     </v-flex>
   </v-layout>
@@ -28,13 +29,19 @@ export default {
     SearchBar,
     Song
   },
-  mounted() {
-    this.$store.dispatch('loadSongs');
-    this.$store.commit('increment', this.keyWord);
-  },
   computed: mapState([
     'songs'
-  ])
+  ]),
+  methods: {
+    goToSong(id) {
+      this.$router.push({
+        name: "DetailedSong",
+        params: {
+          songId: id
+        }
+      })
+    }
+  },
 }
 </script>
 

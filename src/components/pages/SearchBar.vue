@@ -38,8 +38,8 @@ export default {
   methods: {
     search() {
       if (this.$refs.form.validate()) {
-        this.$emit('searchSongs', this.keyWord);
-        this.$store.commit('increment', this.keyWord);
+        // this.$emit('searchSongs', this.keyWord);
+        this.$store.dispatch('loadSongs', this.keyWord)
       }
     }
   },

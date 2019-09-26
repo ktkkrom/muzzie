@@ -14,7 +14,7 @@
             </v-text-field>
           </v-flex>
           <v-flex xs12 md4 lg2 text-center>
-            <v-btn  :color="buttonColor"  @click="search()">
+            <v-btn class="deep-purple--text" @click="search()">
               <span>Search</span>
             </v-btn>
           </v-flex>
@@ -38,7 +38,6 @@ export default {
   methods: {
     search() {
       if (this.$refs.form.validate()) {
-        // this.$emit('searchSongs', this.keyWord);
         this.$store.dispatch('loadSongs', this.keyWord)
       }
     }
@@ -57,5 +56,3 @@ export default {
 
 <style lang="css" scoped>
 </style>
-
-<!-- 79eKbrYcqLcSZDCk8T9KDfdIxfnopweXR0AtQxYioXaizwo-c8yRqoEMh2RnHpM3 -->

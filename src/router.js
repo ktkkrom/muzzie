@@ -2,10 +2,8 @@ import VueRouter from 'vue-router';
 
 import NotFound from './components/pages/NotFound.vue';
 import SearchSongs from './components/pages/SearchSongs.vue';
-import VuexTornment from './components/pages/VuexTornment.vue';
 import DetailedSong from './components/pages/DetailedSong.vue';
-import SearchArtists from './components/pages/SearchArtists.vue';
-import Artist from './components/pages/Artist.vue';
+import SongList from './components/pages/SongList.vue';
 
 export default new VueRouter({
   mode: 'history',
@@ -21,16 +19,9 @@ export default new VueRouter({
       name: "SearchSongs"
     },
     {
-      path: '/about',
-      component: VuexTornment
-    },
-    {
       path: '/artists',
-      component: SearchArtists
-    },
-    {
-      path: '/artists/:artistId',
-      component: Artist
+      component: SongList,
+      name: "SongList"
     },
     {
       path: '/songs/:songId',
